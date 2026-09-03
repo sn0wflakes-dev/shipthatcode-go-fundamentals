@@ -81,18 +81,55 @@ func main() {
 		// fmt.Println(square(input))
 
 		// exercise 09 - Error handling
-		reader := bufio.NewReader(os.Stdin)
-		stringInput, _ := reader.ReadString('\n')
-		stringInput = strings.TrimRight(stringInput, "\r\n")
+		// reader := bufio.NewReader(os.Stdin)
+		// stringInput, _ := reader.ReadString('\n')
+		// stringInput = strings.TrimRight(stringInput, "\r\n")
+		//
+		// toInteger, err := strconv.Atoi(stringInput)
+		//
+		// if err != nil {
+		// 	fmt.Println("bad")
+		// 	return
+		// }
+		//
+		// fmt.Printf("ok %d", toInteger)
 
-		toInteger, err := strconv.Atoi(stringInput)
-		
-		if err != nil {
-			fmt.Println("bad")
-			return
+		// practice slice at exercise 10
+		// println("Mutate Arr/Src from slice")
+		// base1 := []int{10, 10, 10, 10}
+		// mutateBase := base1[:]
+		// fmt.Println(mutateBase)
+		// mutateBase[0] = 20
+		// fmt.Println(mutateBase)
+		//
+		// println("Copy Arr to Slice")
+		// base2 := []int{10, 10, 10, 30}
+		// copyView := make([]int, 4, 8)
+		// copy(copyView, base2[:])
+		// fmt.Println(base2)
+		// copyView[3] = 40
+		// fmt.Println(copyView)
+
+		// exercise 10 - slice
+		reader := bufio.NewReader(os.Stdin)
+		input, _ := reader.ReadString('\n')
+		inputParts := strings.Fields(strings.TrimSpace(input))
+
+		nums := make([]int, len(inputParts))
+		for _, v := range inputParts {
+			n, _ := strconv.Atoi(v)
+			nums = append(nums, n)
 		}
 
-		fmt.Printf("ok %d", toInteger)
+		maxValue := 0
+		for _, v := range nums {
+			if  maxValue <= v {
+				maxValue = v
+			}
+		}
+
+		fmt.Println(maxValue)
+
 }
 
 // func rectArea(w, h int) int {
