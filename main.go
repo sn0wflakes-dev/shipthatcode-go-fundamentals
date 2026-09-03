@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strconv"
 	"strings"
 )
 
@@ -111,24 +110,37 @@ func main() {
 		// fmt.Println(copyView)
 
 		// exercise 10 - slice
+		// reader := bufio.NewReader(os.Stdin)
+		// input, _ := reader.ReadString('\n')
+		// inputParts := strings.Fields(strings.TrimSpace(input))
+		//
+		// nums := make([]int, 0, len(inputParts))
+		// for _, v := range inputParts {
+		// 	n, _ := strconv.Atoi(v)
+		// 	nums = append(nums, n)
+		// }
+		//
+		// var maxValue = nums[0]
+		// for _, v := range nums {
+		// 	if  maxValue <= v {
+		// 		maxValue = v
+		// 	}
+		// }
+		//
+		// fmt.Println(maxValue)
+
+		// exercise 11 - Map
 		reader := bufio.NewReader(os.Stdin)
-		input, _ := reader.ReadString('\n')
-		inputParts := strings.Fields(strings.TrimSpace(input))
+		inputString, _ := reader.ReadString('\n')
+		strArr := strings.Fields(strings.TrimSpace(inputString))
 
-		nums := make([]int, 0, len(inputParts))
-		for _, v := range inputParts {
-			n, _ := strconv.Atoi(v)
-			nums = append(nums, n)
+		strMap := map[string]bool{}
+
+		for _, v := range strArr {
+			strMap[v] = true
 		}
 
-		var maxValue = nums[0]
-		for _, v := range nums {
-			if  maxValue <= v {
-				maxValue = v
-			}
-		}
-
-		fmt.Println(maxValue)
+		fmt.Println(len(strMap))
 
 }
 
