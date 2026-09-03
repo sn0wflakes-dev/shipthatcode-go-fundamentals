@@ -1,11 +1,11 @@
 package main
 
 import (
-	"bufio"
+	// "bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
+	// "os"
+	// "strconv"
+	// "strings"
 )
 
 func main() {
@@ -38,19 +38,33 @@ func main() {
 		// _ = fmt.Sprint
 
 		// exercise 05 - Formatted Print
-		reader := bufio.NewReader(os.Stdin)
-		nameInput, _ := reader.ReadString('\n')
-		ageInput, _ := reader.ReadString('\n')
-		nameInput = strings.TrimRight(nameInput, "\r\n")
-		ageInput = strings.TrimRight(ageInput, "\r\n")
-		age, _ := strconv.Atoi(ageInput)
+		// reader := bufio.NewReader(os.Stdin)
+		// nameInput, _ := reader.ReadString('\n')
+		// ageInput, _ := reader.ReadString('\n')
+		// nameInput = strings.TrimRight(nameInput, "\r\n")
+		// ageInput = strings.TrimRight(ageInput, "\r\n")
+		// age, _ := strconv.Atoi(ageInput)
+		//
+		// fmt.Printf("Hi, %s! You are %d years old.\n", nameInput, age)
+		//
+		// _ = age
+		// _ = fmt.Print
 
-		fmt.Printf("Hi, %s! You are %d years old.\n", nameInput, age)
+		// exercise 06 - if, Else Switch 
+		var n int
+		fmt.Scan(&n)
 
-		_ = age
-		_ = fmt.Print		
+		if n % 3 == 0 && n % 5 == 0 {
+			fmt.Println("FizzBuzz")
+		} else if n % 3 == 0 {
+			fmt.Println("Fizz")
+		} else if n % 5 == 0 {
+			fmt.Println("Buzz")
+		} else {
+			fmt.Println(n)
+		}
 }
 
-func rectArea(w, h int) int {
-	return w * h
-}
+// func rectArea(w, h int) int {
+// 	return w * h
+// }
