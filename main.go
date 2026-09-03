@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -122,7 +121,7 @@ func main() {
 			nums = append(nums, n)
 		}
 
-		var maxValue = math.MinInt
+		var maxValue = nums[0]
 		for _, v := range nums {
 			if  maxValue <= v {
 				maxValue = v
