@@ -140,34 +140,44 @@ func main() {
 		// fmt.Println(len(strMap))
 
 		// exercise 12 - Struct
-		var x1, y1, x2, y2 int
-		fmt.Scan(&x1)
-		fmt.Scan(&y1)
-		fmt.Scan(&x2)
-		fmt.Scan(&y2)
+		// var x1, y1, x2, y2 int
+		// fmt.Scan(&x1)
+		// fmt.Scan(&y1)
+		// fmt.Scan(&x2)
+		// fmt.Scan(&y2)
+		//
+		// point := Point{XAxis{x1: x1, x2: x2}, YAxis{y1: y1, y2: y2}}
+		// fmt.Println(point.pointDistance())
 
-		point := Point{XAxis{x1: x1, x2: x2}, YAxis{y1: y1, y2: y2}}
-		fmt.Println(point.pointDistance())
+		// exercise 13 - Pointer
+		var input int
+		fmt.Scan(&input)
+		increment(&input)
+		fmt.Println(input)
 }
 
-type Point struct {
-	x XAxis
-	y YAxis
+func increment(n *int)  {
+	*n++
 }
 
-type XAxis struct {
-	x1 int
-	x2 int
-}
-
-type YAxis struct {
-	y1 int
-	y2 int
-}
-
-func (point Point) pointDistance() int {
-	return (point.x.x2 - point.x.x1) * (point.x.x2 - point.x.x1) + (point.y.y2 - point.y.y1) * (point.y.y2 - point.y.y1)
-}
+// type Point struct {
+// 	x XAxis
+// 	y YAxis
+// }
+//
+// type XAxis struct {
+// 	x1 int
+// 	x2 int
+// }
+//
+// type YAxis struct {
+// 	y1 int
+// 	y2 int
+// }
+//
+// func (point Point) pointDistance() int {
+// 	return (point.x.x2 - point.x.x1) * (point.x.x2 - point.x.x1) + (point.y.y2 - point.y.y1) * (point.y.y2 - point.y.y1)
+// }
 
 // func rectArea(w, h int) int {
 // 	return w * h
