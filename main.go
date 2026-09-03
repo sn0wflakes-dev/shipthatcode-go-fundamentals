@@ -51,18 +51,29 @@ func main() {
 		// _ = fmt.Print
 
 		// exercise 06 - if, Else Switch 
+		// var n int
+		// fmt.Scan(&n)
+		//
+		// if n % 3 == 0 && n % 5 == 0 {
+		// 	fmt.Println("FizzBuzz")
+		// } else if n % 3 == 0 {
+		// 	fmt.Println("Fizz")
+		// } else if n % 5 == 0 {
+		// 	fmt.Println("Buzz")
+		// } else {
+		// 	fmt.Println(n)
+		// }
+
+		// exercise 07 - Loops with for
 		var n int
 		fmt.Scan(&n)
 
-		if n % 3 == 0 && n % 5 == 0 {
-			fmt.Println("FizzBuzz")
-		} else if n % 3 == 0 {
-			fmt.Println("Fizz")
-		} else if n % 5 == 0 {
-			fmt.Println("Buzz")
-		} else {
-			fmt.Println(n)
+		sum := 0
+		for i := 1; i <= n; i++ {
+			sum += i
 		}
+
+		fmt.Println(sum)
 }
 
 // func rectArea(w, h int) int {
