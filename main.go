@@ -1,11 +1,11 @@
 package main
 
 import (
-	// "bufio"
+	"bufio"
 	"fmt"
-	// "os"
-	// "strconv"
-	// "strings"
+	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -76,15 +76,29 @@ func main() {
 		// fmt.Println(sum)
 
 		// exercise 08 - Function
-		var input int
-		fmt.Scan(&input)
-		fmt.Println(square(input))
+		// var input int
+		// fmt.Scan(&input)
+		// fmt.Println(square(input))
+
+		// exercise 09 - Error handling
+		reader := bufio.NewReader(os.Stdin)
+		stringInput, _ := reader.ReadString('\n')
+		stringInput = strings.TrimRight(stringInput, "\r\n")
+
+		toInteger, err := strconv.Atoi(stringInput)
+		
+		if err != nil {
+			fmt.Println("bad")
+			return
+		}
+
+		fmt.Printf("ok %d", toInteger)
 }
 
 // func rectArea(w, h int) int {
 // 	return w * h
 // }
 
-func square(number int) int {
-	return number * number
-}
+// func square(number int) int {
+// 	return number * number
+// }
