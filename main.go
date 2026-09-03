@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
     // Print the greeting below.
@@ -16,10 +21,20 @@ func main() {
 		// fmt.Println(result)
 
 		// exercise 03 -  Numbers and Math
-		var width, height int
-		fmt.Scan(&width, &height)
+		// var width, height int
+		// fmt.Scan(&width, &height)
+		//
+		// fmt.Println(rectArea(width, height))
 
-		fmt.Println(rectArea(width, height))
+		// exercise 04 - Strings
+		reader := bufio.NewReader(os.Stdin)
+		line, _ := reader.ReadString('\n')
+		line = strings.TrimRight(line, "\r\n")
+		line = strings.ToUpper(line)
+
+		fmt.Println(line)
+
+		_ = fmt.Sprint
 }
 
 func rectArea(w, h int) int {
