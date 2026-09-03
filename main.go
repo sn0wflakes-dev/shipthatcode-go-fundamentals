@@ -65,17 +65,26 @@ func main() {
 		// }
 
 		// exercise 07 - Loops with for
-		var n int
-		fmt.Scan(&n)
+		// var n int
+		// fmt.Scan(&n)
+		//
+		// sum := 0
+		// for i := 1; i <= n; i++ {
+		// 	sum += i
+		// }
+		//
+		// fmt.Println(sum)
 
-		sum := 0
-		for i := 1; i <= n; i++ {
-			sum += i
-		}
-
-		fmt.Println(sum)
+		// exercise 08 - Function
+		var input int
+		fmt.Scan(&input)
+		fmt.Println(square(input))
 }
 
 // func rectArea(w, h int) int {
 // 	return w * h
 // }
+
+func square(number int) int {
+	return number * number
+}
