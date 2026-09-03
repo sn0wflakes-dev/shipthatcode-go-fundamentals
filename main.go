@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -115,13 +116,13 @@ func main() {
 		input, _ := reader.ReadString('\n')
 		inputParts := strings.Fields(strings.TrimSpace(input))
 
-		nums := make([]int, len(inputParts))
+		nums := make([]int, 0, len(inputParts))
 		for _, v := range inputParts {
 			n, _ := strconv.Atoi(v)
 			nums = append(nums, n)
 		}
 
-		maxValue := 0
+		var maxValue = math.MinInt
 		for _, v := range nums {
 			if  maxValue <= v {
 				maxValue = v
