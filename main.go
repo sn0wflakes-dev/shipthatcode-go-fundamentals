@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -27,14 +28,27 @@ func main() {
 		// fmt.Println(rectArea(width, height))
 
 		// exercise 04 - Strings
+		// reader := bufio.NewReader(os.Stdin)
+		// line, _ := reader.ReadString('\n')
+		// line = strings.TrimRight(line, "\r\n")
+		// line = strings.ToUpper(line)
+		//
+		// fmt.Println(line)
+		//
+		// _ = fmt.Sprint
+
+		// exercise 05 - Formatted Print
 		reader := bufio.NewReader(os.Stdin)
-		line, _ := reader.ReadString('\n')
-		line = strings.TrimRight(line, "\r\n")
-		line = strings.ToUpper(line)
+		nameInput, _ := reader.ReadString('\n')
+		ageInput, _ := reader.ReadString('\n')
+		nameInput = strings.TrimRight(nameInput, "\r\n")
+		ageInput = strings.TrimRight(ageInput, "\r\n")
+		age, _ := strconv.Atoi(ageInput)
 
-		fmt.Println(line)
+		fmt.Printf("Hi, %s! You are %d years old.\n", nameInput, age)
 
-		_ = fmt.Sprint
+		_ = age
+		_ = fmt.Print		
 }
 
 func rectArea(w, h int) int {
